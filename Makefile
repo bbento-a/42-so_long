@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bbento-a <bbento-a@student.42.fr>          +#+  +:+       +#+         #
+#    By: bbento-a <bbento-a@student.42.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 15:37:59 by bbento-a          #+#    #+#              #
-#    Updated: 2024/06/24 15:02:55 by bbento-a         ###   ########.fr        #
+#    Updated: 2024/06/24 17:12:34 by bbento-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,13 +21,14 @@ NAME		= so_long
 # Directories
 
 LIBFT		= ./libft/libft.a
-INC			= inc/
 SRC_DIR		= src/
 OBJ_DIR		= obj/
 
 # Compiler and Flags
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= #-Wall -Wextra -Werror -g
+LMLXFLAGS	= -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+LMLXLINUX	= -I/usr/include -Imlx_linux
 RM			= rm -f
 
 # Source Files
@@ -36,26 +37,29 @@ SOLONG_SRCS = $(SRC_DIR)
 
 # Conversion of files (Linking and applying pattern substituition to all source files)
 
-SRC			= $(SOLONG_SRCS)
-OBJ			= $(patsubst $(SRC_DIR).c,$(OBJ_DIR).o, $(SRCS))
+SRC			= $(SOLONG_SRCS)test.c
+OBJ			= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o, $(SRC))
 
 #
 # RULES
 #
 
-$(LIBFT)
-			make -C ./libft
 
 all:			$(NAME)
 
-$(NAME)			$(OBJ) $(LIBFT)
-				$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
-
-$(OBJ_DIR)%.o	$(SRC_DIR)%.C
+$(LIBFT):		
+				make -C ./libft
+				
+$(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 				mkdir -p $(@D)
-				$(CC) $(CFLAGS) -c $< -o $@
+				$(CC) $(CFLAGS) $(LMLXLINUX) -c $< -o $@
 
-clean:			$(RM) -r $(OBJ_DIR)
+$(NAME):		$(OBJ) $(LIBFT)
+				$(CC) $(CFLAGS) $(OBJ) $(LMLXFLAGS) $(LIBFT) -o $(NAME)
+
+
+clean:			
+				$(RM) -r $(OBJ_DIR)
 				make clean -C ./libft
 				
 fclean:			clean

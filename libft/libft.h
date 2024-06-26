@@ -20,6 +20,8 @@
 # include <stdlib.h>
 # include <limits.h>
 # include "ft_printf.h"
+# include "get_next_line.h"
+# include "get_next_line_bonus.h"
 
 //Part 1
 int		ft_isalpha(int c);

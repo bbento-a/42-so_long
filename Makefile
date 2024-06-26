@@ -6,7 +6,7 @@
 #    By: bbento-a <bbento-a@student.42.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 15:37:59 by bbento-a          #+#    #+#              #
-#    Updated: 2024/06/24 17:12:34 by bbento-a         ###   ########.fr        #
+#    Updated: 2024/06/26 17:49:49 by bbento-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,12 @@ RM			= rm -f
 
 # Source Files
 
-SOLONG_SRCS = $(SRC_DIR)
+SOLONG_SRCS =	$(SRC_DIR)
 
 # Conversion of files (Linking and applying pattern substituition to all source files)
 
-SRC			= $(SOLONG_SRCS)test.c
+SRC			=	$(SOLONG_SRCS)test.c\
+				$(SOLONG_SRCS)sl_main.c
 OBJ			= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o, $(SRC))
 
 #
@@ -55,6 +56,7 @@ $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 				$(CC) $(CFLAGS) $(LMLXLINUX) -c $< -o $@
 
 $(NAME):		$(OBJ) $(LIBFT)
+				cd mlx_linux && ./configure
 				$(CC) $(CFLAGS) $(OBJ) $(LMLXFLAGS) $(LIBFT) -o $(NAME)
 
 

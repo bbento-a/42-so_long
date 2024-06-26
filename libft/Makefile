@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+         #
+#    By: bbento-a <bbento-a@student.42.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/10 14:48:22 by bbento-a          #+#    #+#              #
-#    Updated: 2024/04/23 17:15:02 by bbento-a         ###   ########.fr        #
+#    Updated: 2024/06/26 17:55:21 by bbento-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRC = ft_isalpha.c ft_isdigit.c ft_strlcpy.c ft_isalnum.c ft_isascii.c\
 	  ft_strnstr.c ft_atoi.c ft_strdup.c ft_calloc.c ft_putchar_fd.c\
 	  ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_strjoin.c ft_substr.c\
 	  ft_strtrim.c ft_split.c ft_strmapi.c ft_striteri.c ft_itoa.c\
-	  ft_printf.c ft_printf_c.c ft_printf_p.c ft_printf_s.c ft_putnbr_base.c
+	  ft_printf.c ft_printf_c.c ft_printf_p.c ft_printf_s.c ft_putnbr_base.c\
+	  get_next_line.c get_next_line_utils.c get_next_line_bonus.c
 
 BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c\
 		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c

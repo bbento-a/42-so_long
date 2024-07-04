@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bbento-a <bbento-a@student.42.com>         +#+  +:+       +#+         #
+#    By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 15:37:59 by bbento-a          #+#    #+#              #
-#    Updated: 2024/06/26 17:49:49 by bbento-a         ###   ########.fr        #
+#    Updated: 2024/07/04 14:30:06 by bbento-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,11 @@ SOLONG_SRCS =	$(SRC_DIR)
 # Conversion of files (Linking and applying pattern substituition to all source files)
 
 SRC			=	$(SOLONG_SRCS)test.c\
-				$(SOLONG_SRCS)sl_main.c
+				$(SOLONG_SRCS)sl_main.c\
+				$(SOLONG_SRCS)error_utils.c\
+				$(SOLONG_SRCS)map_funcs.c\
+				$(SOLONG_SRCS)ft_functions.c
+				
 OBJ			= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o, $(SRC))
 
 #
@@ -50,6 +54,7 @@ all:			$(NAME)
 
 $(LIBFT):		
 				make -C ./libft
+				make bonus -C ./libft
 				
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 				mkdir -p $(@D)

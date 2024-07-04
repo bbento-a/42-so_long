@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sl_main.c                                          :+:      :+:    :+:   */
+/*   error_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbento-a <bbento-a@student.42.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 17:10:18 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/02 18:40:23 by bbento-a         ###   ########.fr       */
+/*   Created: 2024/07/02 16:00:02 by bbento-a          #+#    #+#             */
+/*   Updated: 2024/07/02 17:18:50 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-
-int main(int ac, char **av)
+void    print_error_msg(char *str)
 {
-    if (ac != 2)
-        print_error_msg("Wrong parameters.\nTry running ./so_long <map_file.ber>");
-    map_read(av[1]);
-}
-t_data  *data(void)
-{
-    static t_data res;
-    
-    return (&res);
+    ft_putstr_fd("Error: ", STDERR_FILENO);
+    ft_putstr_fd(str, STDERR_FILENO);
+    ft_putchar_fd('\n', STDERR_FILENO);
+    exit(EXIT_FAILURE);
 }

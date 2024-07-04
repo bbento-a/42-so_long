@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 15:04:15 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/06/26 17:22:00 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/02 17:26:41 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,28 @@
 //     mlx_loop(mlx);
 // }
 
-// typedef struct	s_data {
-// 	void	*img;
-// 	char	*addr;
-// 	int		bits_per_pixel;
-// 	int		line_length;
-// 	int		endian;
-// }				t_data;
+// Trying opening a .xpm file (test)
 
-// void    ft_put_pixel(t_data *data, int x, int y, int color)
+// int close_window(void)
 // {
-//     char *dest;
-
-//     dest = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-//     *(unsigned int*)dest = color;
+//     exit(0);
 // }
 
-// int	main(void)
+// int main(void)
 // {
-// 	void	*mlx;
-// 	t_data	*img;
+//     void    *mlx;
+//     void    *window;
+//     void    *img;
+//     int     img_wd;
+//     int     img_hg;
+//     int    *img_data;
 
-// 	mlx = mlx_init();
-// 	img->img = mlx_new_image(mlx, 1920, 1080);
-//     img->addr = mlx_get_data_addr(img->img, img->bits_per_pixel, &img->line_length, &img->endian);
+//     mlx = mlx_init();
+//     window = mlx_new_window(mlx, 800, 600, "Frame test");
+//     img = mlx_xpm_file_to_image(mlx, "src/textures/Wall.xpm", &img_wd, &img_hg);
+    
+//     mlx_put_image_to_window(mlx, window, img, 0, 0);
+//     mlx_hook(window, 17, 0, close_window, NULL);
+//     mlx_loop(mlx);
+//     return (0);
 // }

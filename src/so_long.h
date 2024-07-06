@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:12:09 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/04 14:51:51 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/05 17:10:02 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ t_data  *data(void);
 // map_funcs.c
 
 int     map_namecheck(char *map_file);
-void    map_read(char *map_file);
-char    **map_check(int fd);
+t_list  *map_read(char *map_file);
+char    **map_check(char *map_file);
 
 // errorutils.c
 

@@ -6,7 +6,7 @@
 #    By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 15:37:59 by bbento-a          #+#    #+#              #
-#    Updated: 2024/07/04 14:30:06 by bbento-a         ###   ########.fr        #
+#    Updated: 2024/07/04 18:27:38 by bbento-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJ_DIR		= obj/
 
 # Compiler and Flags
 CC			= cc
-CFLAGS		= #-Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror -g
 LMLXFLAGS	= -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 LMLXLINUX	= -I/usr/include -Imlx_linux
 RM			= rm -f
@@ -37,8 +37,7 @@ SOLONG_SRCS =	$(SRC_DIR)
 
 # Conversion of files (Linking and applying pattern substituition to all source files)
 
-SRC			=	$(SOLONG_SRCS)test.c\
-				$(SOLONG_SRCS)sl_main.c\
+SRC			=	$(SOLONG_SRCS)sl_main.c\
 				$(SOLONG_SRCS)error_utils.c\
 				$(SOLONG_SRCS)map_funcs.c\
 				$(SOLONG_SRCS)ft_functions.c

@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 16:28:14 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/07 13:45:16 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/07 13:45:28 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ t_list    *map_read(char *map_file)
         free(line);
         line = get_next_line(fd);
     }
+    free(line);
     close(fd);
     return (map_lst);
 }

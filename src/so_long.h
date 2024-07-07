@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:12:09 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/05 17:10:02 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/07 12:37:21 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,16 @@
 
 typedef struct s_data
 {
-    char **map;
+    char        **map;
+    // t_mapcont   content;    
 }   t_data;
+
+// typedef struct s_mapcont
+// {
+//     int collectables;
+//     int player;
+//     int exit;
+// }   t_mapcont;
 
 //
 //  FUNCTIONS
@@ -49,9 +57,16 @@ int     map_namecheck(char *map_file);
 t_list  *map_read(char *map_file);
 char    **map_check(char *map_file);
 
+// mapdata_checker.c
+
+void    map_count_checker(char **map);
+void    map_count_player(char **map);
+void    map_count_collectables(char **map);
+void    map_count_exit(char **map);
+
 // errorutils.c
 
-void    print_error_msg(char *str);
+void    print_error_msg(char *str, char **map);
 
 // ft_functions.c
 

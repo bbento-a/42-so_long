@@ -6,7 +6,7 @@
 #    By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 15:37:59 by bbento-a          #+#    #+#              #
-#    Updated: 2024/07/04 18:27:38 by bbento-a         ###   ########.fr        #
+#    Updated: 2024/07/07 11:09:10 by bbento-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,8 @@ SOLONG_SRCS =	$(SRC_DIR)
 SRC			=	$(SOLONG_SRCS)sl_main.c\
 				$(SOLONG_SRCS)error_utils.c\
 				$(SOLONG_SRCS)map_funcs.c\
-				$(SOLONG_SRCS)ft_functions.c
+				$(SOLONG_SRCS)ft_functions.c\
+				$(SOLONG_SRCS)mapdata_checker.c
 				
 OBJ			= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o, $(SRC))
 

@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 16:28:14 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/07 13:45:28 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/08 12:56:15 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,22 @@
 char    **map_check(char *map_file)
 {
     t_list  *map_lst;
+    t_list  *tmp;
     char    **map;
     int     i;
     
     map_lst = map_read(map_file);
-    i = ft_lstsize(map_lst);
+    tmp = map_lst;
+    i = ft_lstsize(tmp);
     map = malloc(sizeof(char *) * (i + 1));
-    if (!map || map_lst)
+    if (!map)
         print_error_msg("Map allocation falied while setting it up", NULL);
     i = 0;
-    while (map_lst)
+    tmp = map_lst;
+    while (tmp)
     {
-        map[i++] = map_lst->content;
-        map_lst = map_lst->next;
+        map[i++] = tmp->content;
+        tmp = tmp->next;
     }
     map[i] = NULL;
     ft_lstclear(&map_lst);
@@ -68,7 +71,6 @@ t_list    *map_read(char *map_file)
     while (line)
     {
         ft_lstadd_back(&map_lst, ft_lstnew(line));
-        free(line);
         line = get_next_line(fd);
     }
     free(line);

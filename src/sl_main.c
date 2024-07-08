@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 17:10:18 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/07 11:20:01 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/08 13:00:47 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(int ac, char **av)
     int     i = 0;
     
     if (ac != 2)
-        print_error_msg("Wrong parameters.\nTry running ./so_long <map_file.ber>");
+        print_error_msg("Wrong parameters.\nTry running ./so_long <map_file.ber>", NULL);
     map = map_check(av[1]);
     map_count_checker(map);
     while (map[i])

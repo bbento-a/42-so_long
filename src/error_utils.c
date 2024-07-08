@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 16:00:02 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/07 12:35:13 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/08 13:03:41 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void    print_error_msg(char *str, char **map)
 {
     int i;
 
-    i = 0;
+    i = -1;
     if (map)
     {
-        while (map[i++])
+        while (map[++i])
             free(map[i]);
         free(map);
     }

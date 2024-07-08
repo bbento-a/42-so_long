@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:12:09 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/07 12:37:21 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/08 13:12:29 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,12 @@ char    **map_check(char *map_file);
 
 // mapdata_checker.c
 
-void    map_count_checker(char **map);
 void    map_count_player(char **map);
 void    map_count_collectables(char **map);
 void    map_count_exit(char **map);
+void    map_count_checker(char **map);
 
-// errorutils.c
+// error_utils.c
 
 void    print_error_msg(char *str, char **map);
 

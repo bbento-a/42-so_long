@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:12:09 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/09 20:04:01 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/10 16:12:32 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ void    map_count_checker(char **map);
 
 void    map_isrectangular(char **map);
 void    map_closed(char **map);
-void    flood_fill(char **map, char element);
+int     flood_fill_e(char **map, int ply_x, int ply_y);
+int     flood_fill_c(char **map, int ply_x, int ply_y);
 void    mapdata_validate(char **map);
 
 // error_utils.c
@@ -89,6 +90,7 @@ void    free_matrix(char **mtx);
 
 // ft_functions.c
 
+char    **ft_mtxdup(char **mtx);
 bool	ft_rev_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

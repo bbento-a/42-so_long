@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:00:45 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/10 11:25:52 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/10 16:01:25 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,14 @@ char    **ft_mtxdup(char **mtx)
 {
     char    **res;
     int     i;
-    int     j;
     
     i = 0;
-    while (map[i])
+    while (mtx[i])
         i++;
     res = malloc((sizeof(char *)) * (i + 1));
-    while (res[])
+    res[i] = NULL;
+    i = -1;
+    while (mtx[++i])
+        res[i] = ft_strdup(mtx[i]);
     return (res);
 }

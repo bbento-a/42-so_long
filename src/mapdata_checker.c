@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:54:19 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/10 11:02:07 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/10 18:54:41 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void    map_count_collectables(char **map)
 
     i = -1;
     found_c = 0;
-    while (map[++i] && !found_c)
+    while (map[++i])
     {
         j = 0;
         while(map[i][j])

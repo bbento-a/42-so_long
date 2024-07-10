@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:54:19 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/10 18:54:41 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/10 19:24:19 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,5 +110,7 @@ void    map_count_checker(char **map)
     map_count_player(map);
     map_count_collectables(map);
     map_count_exit(map);
+    map_isrectangular(map);
+    map_closed(map);
 }
 

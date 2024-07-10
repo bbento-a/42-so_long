@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:54:19 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/09 15:08:46 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/09 20:10:30 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void    map_count_player(char **map)
         }
     }
     if (count < 1)
-        return (print_error_msg("Map needs at least 1 player", map));
+        return (print_error_msg("Map needs at least 1 player"));
     if (count > 1)
-        return (print_error_msg("Map can only contain 1 player", map));
+        return (print_error_msg("Map can only contain 1 player"));
 }
 
 // Checks if there are collectables in the map file
@@ -62,7 +62,7 @@ void    map_count_collectables(char **map)
         }
     }
     if (!found_c)
-        (print_error_msg("Map must contain at least 1 collectable", map));    
+        (print_error_msg("Map must contain at least 1 collectable"));    
 }
 
 // Checks if there's only 1 exit in the map file
@@ -86,9 +86,9 @@ void    map_count_exit(char **map)
         }
     }
     if (count < 1)
-        return (print_error_msg("Map needs at least 1 exit", map));
+        return (print_error_msg("Map needs at least 1 exit"));
     if (count > 1)
-        return (print_error_msg("Map can only contain 1 exit", map));
+        return (print_error_msg("Map can only contain 1 exit"));
 }
 
 // Verifies if all elements (characters) in map data are correct and calls more check functions
@@ -105,7 +105,7 @@ void    map_count_checker(char **map)
         while(map[i][++j])
         {
             if(!ft_strchr("01CEP\n", map[i][j]))
-                return(print_error_msg("Map contains invalid characters", map));
+                return(print_error_msg("Map contains invalid characters"));
         }
     }
     map_count_player(map);

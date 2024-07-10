@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:12:09 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/09 16:47:02 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/09 20:04:01 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ typedef struct s_player
 
 typedef struct s_data
 {
-    char                **map;
-    int                 collectables;
+    char        **map;
+    int         collectables;
     
-    t_mapsize    *mapsize;
-    t_player     *mc;   
+    t_mapsize   mapsize;
+    t_player    mc;   
 }   t_data;
 
 
@@ -60,7 +60,7 @@ typedef struct s_data
 
 // sl_main.c
 
-t_data  *get_data(void);
+t_data  *sl_data(void);
 
 // map_funcs.c
 
@@ -84,7 +84,8 @@ void    mapdata_validate(char **map);
 
 // error_utils.c
 
-void    print_error_msg(char *str, char **map);
+void    print_error_msg(char *str);
+void    free_matrix(char **mtx);
 
 // ft_functions.c
 

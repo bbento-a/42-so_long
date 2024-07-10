@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:54:19 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/09 20:10:30 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/10 11:02:07 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@ void    map_count_player(char **map)
     count = 0;
     while (map[++i])
     {
-        j = 0;
-        while(map[i][j])
-        {
+        j = -1;
+        while(map[i][++j])
             if(map[i][j] == 'P')
+            {
                 count++;
-            j++;
-        }
+                sl_data()->mc.pos_x = j;
+                sl_data()->mc.pos_y = i;
+            }
     }
     if (count < 1)
         return (print_error_msg("Map needs at least 1 player"));
@@ -42,27 +43,25 @@ void    map_count_player(char **map)
 
 void    map_count_collectables(char **map)
 {
-    int     i;
-    int     j;
-    bool    found_c;
+    int i;
+    int j;
+    int found_c;
 
     i = -1;
-    found_c = false;
+    found_c = 0;
     while (map[++i] && !found_c)
     {
         j = 0;
         while(map[i][j])
         {
             if(map[i][j] == 'C')
-            {
-                found_c = true;
-                break;
-            }
+                found_c++;
             j++;
         }
     }
-    if (!found_c)
-        (print_error_msg("Map must contain at least 1 collectable"));    
+    if (found_c < 1)
+        (print_error_msg("Map must contain at least 1 collectable"));
+    sl_data()->collectables = found_c;
 }
 
 // Checks if there's only 1 exit in the map file

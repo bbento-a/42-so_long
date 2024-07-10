@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:00:45 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/07 12:25:59 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/10 11:25:52 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,18 @@ bool	ft_rev_strncmp(const char *s1, const char *s2, size_t n)
 		i--;
     }
 	return (true);
+}
+
+char    **ft_mtxdup(char **mtx)
+{
+    char    **res;
+    int     i;
+    int     j;
+    
+    i = 0;
+    while (map[i])
+        i++;
+    res = malloc((sizeof(char *)) * (i + 1));
+    while (res[])
+    return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 14:16:15 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/10 10:35:57 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/10 11:20:38 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,22 @@ void map_closed(char **map)
     }
 }
 
-// Checks if all elements are reachable to the player
+// Checks if the player can reach all elements in the map
 
-// void flood_fill(char **map, char element)
+// void flood_fill(char **map, char element, int ply_x, int ply_y)
 // {
     
 // }
 
 void    mapdata_validate(char **map)
 {   
+    char **map_tmp;
+    
+    map_tmp = ft_mtxdup(map);
     map_count_checker(map);
     map_isrectangular(map);
     map_closed(map);
+    
+    // flood_fill(map, 'E', sl_data()->mc.pos_x, sl_data()->mc.pos_y);
+    // flood_fill(map, 'C', sl_data()->mc.pos_x, sl_data()->mc.pos_y);
 }

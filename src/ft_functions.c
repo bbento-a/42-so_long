@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:00:45 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/10 16:01:25 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/11 14:43:37 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,17 @@ char    **ft_mtxdup(char **mtx)
     while (mtx[++i])
         res[i] = ft_strdup(mtx[i]);
     return (res);
+}
+
+void    ft_printmap()
+{
+    int i;
+    
+    i = 0;
+    while (sl_data()->map[i])
+    {
+        ft_printf("%s", sl_data()->map[i]);
+        i++;
+    }
+    free_matrix(sl_data()->map);
 }

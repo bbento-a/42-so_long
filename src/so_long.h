@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:12:09 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/10 16:12:32 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/11 15:48:59 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include "../mlx_linux/mlx.h"
 # include "../mlx_linux/mlx_int.h"
 
-# define SPRITE_SIZE = 64
+# define SS 64 // Sprite Size
 
 //
 //  STRUCTS
@@ -44,13 +44,20 @@ typedef struct s_player
     int pos_y;
 }   t_player;
 
+typedef struct s_mlx_data
+{
+    void    *mlx;
+    void    *window;
+}   t_mlx_data;
+
 typedef struct s_data
 {
     char        **map;
     int         collectables;
     
     t_mapsize   mapsize;
-    t_player    mc;   
+    t_mlx_data  mlx;
+    t_player    mc;
 }   t_data;
 
 
@@ -83,6 +90,11 @@ int     flood_fill_e(char **map, int ply_x, int ply_y);
 int     flood_fill_c(char **map, int ply_x, int ply_y);
 void    mapdata_validate(char **map);
 
+// mlx_window.c
+void    mlx_window_start();
+
+// mlx_hooks.c
+
 // error_utils.c
 
 void    print_error_msg(char *str);
@@ -90,7 +102,8 @@ void    free_matrix(char **mtx);
 
 // ft_functions.c
 
-char    **ft_mtxdup(char **mtx);
 bool	ft_rev_strncmp(const char *s1, const char *s2, size_t n);
+char    **ft_mtxdup(char **mtx);
+void    ft_printmap();
 
 #endif

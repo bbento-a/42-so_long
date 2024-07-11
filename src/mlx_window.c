@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sl_main.c                                          :+:      :+:    :+:   */
+/*   mlx_window.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 17:10:18 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/11 15:45:17 by bbento-a         ###   ########.fr       */
+/*   Created: 2024/07/11 14:53:21 by bbento-a          #+#    #+#             */
+/*   Updated: 2024/07/11 15:43:16 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-
-int main(int ac, char **av)
+void    mlx_window_start()
 {
-    if (ac != 2)
-        print_error_msg("Wrong parameters.\nTry running ./so_long <map_file.ber>");
-    sl_data()->map = map_check(av[1]);
-    mapdata_validate(sl_data()->map);
-    mlx_window_start();
-    ft_printmap();
-}
-
-t_data  *sl_data(void)
-{
-    static t_data res;
-    
-    return (&res);
+    sl_data()->mlx.mlx = mlx_init();
+    sl_data()->mlx.window = mlx_new_window(sl_data()->mlx.mlx,
+        sl_data()->mapsize.x * SS, sl_data()->mapsize.y * SS, "so_long");
+    mlx_loop(sl_data()->mlx.mlx);
 }

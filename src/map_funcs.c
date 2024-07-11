@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 16:28:14 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/09 20:05:13 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/11 14:51:38 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,18 @@ char    **map_check(char *map_file)
 int    map_namecheck(char *map_file)
 {
     char    *ref;
+    int     fd;
     
     ref = ".ber";
     if (!ft_rev_strncmp(map_file, ref, 4))
         print_error_msg("Invalid map file");
-    if (open(map_file, O_RDONLY) < 0)
+    fd = open(map_file, O_RDONLY);
+    if (fd < 0)
+    {
         print_error_msg("Failed to open map file");
-    return(open(map_file, O_RDONLY));
+        close(fd);
+    }
+    return(fd);
 }
 // Reads the file map line by line, adding each line in a new list
 

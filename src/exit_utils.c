@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_utils.c                                      :+:      :+:    :+:   */
+/*   exit_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 16:00:02 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/10 10:37:58 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/12 15:16:11 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ void    print_error_msg(char *str)
     ft_putstr_fd(str, STDERR_FILENO);
     ft_putchar_fd('\n', STDERR_FILENO);
     exit(EXIT_FAILURE);
+}
+int exit_game(void)
+{
+    exit(EXIT_SUCCESS);
 }
 
 void    free_matrix(char **mtx)

@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:12:09 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/11 15:48:59 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/12 18:30:49 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,29 @@
 # include "../mlx_linux/mlx.h"
 # include "../mlx_linux/mlx_int.h"
 
-# define SS 64 // Sprite Size
+// Sprite Paths
+# define MC_FRONT "/src/textures/front.xpm"
+# define MC_LEFT "/src/textures/left.xpm"
+# define MC_BACK "/src/textures/back.xpm"
+# define MC_RIGHT "/src/textures/right.xpm"
+
+# define WALL "/src/textures/wall.xpm"
+# define EXIT "/src/textures/exit.xpm"
+# define FLOOR "/src/textures/floor.xpm"
+# define COLLECTABLE "/src/textures/collectable.xpm"
+
+// Sprite Size
+# define SS 64
+
+// Key codes
+# define W 119
+# define A 97
+# define S 115
+# define D 100
+# define ESC 65307
+
+# define itw mlx_put_image_to_window
+# define xpmti mlx_xpm_file_to_image
 
 //
 //  STRUCTS
@@ -50,12 +72,28 @@ typedef struct s_mlx_data
     void    *window;
 }   t_mlx_data;
 
+typedef struct s_sprites
+{
+    void    *mc_front;
+    void    *mc_left;
+    void    *mc_back;
+    void    *mc_right;
+    void    *wall;
+    void    *exit;
+    void    *floor;
+    void    *collectable;
+}   t_sprites;
+
+// Main struct
+
 typedef struct s_data
 {
     char        **map;
     int         collectables;
+    int         got_c;
     
     t_mapsize   mapsize;
+    t_sprites   sprite;
     t_mlx_data  mlx;
     t_player    mc;
 }   t_data;
@@ -91,13 +129,22 @@ int     flood_fill_c(char **map, int ply_x, int ply_y);
 void    mapdata_validate(char **map);
 
 // mlx_window.c
+void    window_load();
 void    mlx_window_start();
 
-// mlx_hooks.c
+// mlx_images.c
+void    image_destroy();
+void    image_load();
+void    sprite_load(int y, int x);
 
-// error_utils.c
+// mlx_hooks.c
+// void    player_moves();
+int     hooks(int keycode);
+
+// exit_utils.c
 
 void    print_error_msg(char *str);
+int     exit_game(void);
 void    free_matrix(char **mtx);
 
 // ft_functions.c

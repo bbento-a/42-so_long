@@ -6,8 +6,19 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 15:48:29 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/11 15:48:47 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/12 15:17:31 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+// void    player_moves()
+// {
+    
+// }
+
+int hooks(int keycode)
+{
+    keycode = keycode;
+    return (0);
+}

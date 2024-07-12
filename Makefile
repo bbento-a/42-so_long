@@ -6,7 +6,7 @@
 #    By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 15:37:59 by bbento-a          #+#    #+#              #
-#    Updated: 2024/07/11 15:51:28 by bbento-a         ###   ########.fr        #
+#    Updated: 2024/07/12 15:03:41 by bbento-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,13 +38,14 @@ SOLONG_SRCS =	$(SRC_DIR)
 # Conversion of files (Linking and applying pattern substituition to all source files)
 
 SRC			=	$(SOLONG_SRCS)sl_main.c\
-				$(SOLONG_SRCS)error_utils.c\
+				$(SOLONG_SRCS)exit_utils.c\
 				$(SOLONG_SRCS)map_funcs.c\
 				$(SOLONG_SRCS)ft_functions.c\
 				$(SOLONG_SRCS)mapdata_checker.c\
 				$(SOLONG_SRCS)mapsize_checker.c\
 				$(SOLONG_SRCS)mlx_window.c\
-				$(SOLONG_SRCS)mlx_hooks.c
+				$(SOLONG_SRCS)mlx_hooks.c\
+				$(SOLONG_SRCS)mlx_images.c
 				
 OBJ			= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o, $(SRC))
 

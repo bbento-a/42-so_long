@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:12:09 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/12 18:30:49 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/16 15:50:39 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@
 # include "../mlx_linux/mlx_int.h"
 
 // Sprite Paths
-# define MC_FRONT "/src/textures/front.xpm"
-# define MC_LEFT "/src/textures/left.xpm"
-# define MC_BACK "/src/textures/back.xpm"
-# define MC_RIGHT "/src/textures/right.xpm"
+# define MC_FRONT "src/textures/front.xpm"
+# define MC_LEFT "src/textures/left.xpm"
+# define MC_BACK "src/textures/back.xpm"
+# define MC_RIGHT "src/textures/right.xpm"
 
-# define WALL "/src/textures/wall.xpm"
-# define EXIT "/src/textures/exit.xpm"
-# define FLOOR "/src/textures/floor.xpm"
-# define COLLECTABLE "/src/textures/collectable.xpm"
+# define WALL "src/textures/wall.xpm"
+# define EXIT "src/textures/exit.xpm"
+# define FLOOR "src/textures/floor.xpm"
+# define COLLECTABLE "src/textures/collectable.xpm"
 
 // Sprite Size
 # define SS 64
@@ -47,12 +47,17 @@
 # define D 100
 # define ESC 65307
 
-# define itw mlx_put_image_to_window
-# define xpmti mlx_xpm_file_to_image
+# define ITW mlx_put_image_to_window
+# define XPMTI mlx_xpm_file_to_image
 
 //
 //  STRUCTS
 //
+
+typedef struct s_im
+{
+    void    *img;
+}   t_im;
 
 typedef struct s_mapsize
 {
@@ -74,14 +79,14 @@ typedef struct s_mlx_data
 
 typedef struct s_sprites
 {
-    void    *mc_front;
-    void    *mc_left;
-    void    *mc_back;
-    void    *mc_right;
-    void    *wall;
-    void    *exit;
-    void    *floor;
-    void    *collectable;
+    t_im   mc_front;
+    t_im   mc_left;
+    t_im   mc_back;
+    t_im   mc_right;
+    t_im   wall;
+    t_im   exit;
+    t_im   floor;
+    t_im   collectable;
 }   t_sprites;
 
 // Main struct
@@ -93,7 +98,7 @@ typedef struct s_data
     int         got_c;
     
     t_mapsize   mapsize;
-    t_sprites   sprite;
+    t_sprites   spr;
     t_mlx_data  mlx;
     t_player    mc;
 }   t_data;
@@ -135,7 +140,7 @@ void    mlx_window_start();
 // mlx_images.c
 void    image_destroy();
 void    image_load();
-void    sprite_load(int y, int x);
+void    sprite_load(int x, int y);
 
 // mlx_hooks.c
 // void    player_moves();

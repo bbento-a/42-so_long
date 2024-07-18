@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 14:53:21 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/16 16:16:04 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/18 16:49:40 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ void    mlx_window_start()
 {
     sl_data()->mlx.mlx = mlx_init();
     sl_data()->mapsize.x--;
-    ft_printf("mapsize.x: %d\n", sl_data()->mapsize.x);
-    ft_printf("mapsize.y: %d\n", sl_data()->mapsize.y);
     sl_data()->mlx.window = mlx_new_window(sl_data()->mlx.mlx,
         sl_data()->mapsize.x * SS, sl_data()->mapsize.y * SS, "so_long");
     image_load();

@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 16:00:02 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/12 15:16:11 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/18 16:49:03 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void    print_error_msg(char *str)
 }
 int exit_game(void)
 {
+    image_destroy();
+    ft_putstr_fd("Game exited.", STDERR_FILENO);
     exit(EXIT_SUCCESS);
 }
 

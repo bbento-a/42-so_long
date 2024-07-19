@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:12:09 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/16 15:50:39 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/19 12:44:00 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,12 +139,14 @@ void    mlx_window_start();
 
 // mlx_images.c
 void    image_destroy();
+void    image_update(int x, int y, int key);
 void    image_load();
 void    sprite_load(int x, int y);
 
 // mlx_hooks.c
-// void    player_moves();
-int     hooks(int keycode);
+bool    game_collisions(int key);
+void    new_move(int key);
+int     player_moves(int key);
 
 // exit_utils.c
 

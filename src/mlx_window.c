@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 14:53:21 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/18 16:49:40 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/19 12:42:17 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void    mlx_window_start()
         sl_data()->mapsize.x * SS, sl_data()->mapsize.y * SS, "so_long");
     image_load();
     window_load();
-    // mlx_key_hook(sl_data()->mlx.mlx, hooks, NULL);
-    mlx_hook(sl_data()->mlx.mlx, 17, 0, exit_game, NULL);
+    mlx_key_hook(sl_data()->mlx.window, player_moves, NULL);
+    mlx_hook(sl_data()->mlx.window, 17, 0, exit_game, NULL);
     mlx_loop(sl_data()->mlx.mlx);
 }

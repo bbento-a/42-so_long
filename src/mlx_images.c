@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:32:31 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/16 16:35:26 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/19 12:39:18 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,24 @@ void    image_destroy()
     mlx_destroy_image(sl_data()->mlx.mlx, sl_data()->spr.exit.img);
     mlx_destroy_image(sl_data()->mlx.mlx, sl_data()->spr.floor.img);
     mlx_destroy_image(sl_data()->mlx.mlx, sl_data()->spr.collectable.img);
+}
+void    image_update(int x, int y, int key)
+{
+    if (key == 0)
+        ITW(sl_data()->mlx.mlx, sl_data()->mlx.window,
+        sl_data()->spr.floor.img, x * SS, y * SS);
+    else if (key == W)
+        ITW(sl_data()->mlx.mlx, sl_data()->mlx.window,
+        sl_data()->spr.mc_back.img, x * SS, y * SS);
+    else if (key == A)
+        ITW(sl_data()->mlx.mlx, sl_data()->mlx.window,
+        sl_data()->spr.mc_left.img, x * SS, y * SS);
+    else if (key == S)
+        ITW(sl_data()->mlx.mlx, sl_data()->mlx.window,
+        sl_data()->spr.mc_front.img, x * SS, y * SS);
+    else if (key == D)
+        ITW(sl_data()->mlx.mlx, sl_data()->mlx.window,
+        sl_data()->spr.mc_right.img, x * SS, y * SS);
 }
 
 

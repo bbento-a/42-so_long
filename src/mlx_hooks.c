@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 15:48:29 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/19 12:44:41 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/19 20:38:45 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,24 @@
 
 bool    game_collisions(int key)
 {
-    key = key;
-    return (true);
+    int x;
+    int y;
+    
+    x = sl_data()->mc.pos_x;
+    y = sl_data()->mc.pos_y;
+    if (key == W && sl_data()->map[y - 1][x] != '1'
+        && sl_data()->map[y - 1][x] != 'E')
+        return (true);
+    if (key == A && sl_data()->map[y][x - 1] != '1'
+        && sl_data()->map[y][x - 1] != 'E')
+        return (true);
+    if (key == S && sl_data()->map[y + 1][x] != '1'
+        && sl_data()->map[y + 1][x] != 'E')
+        return (true);
+    if (key == D && sl_data()->map[y][x + 1] != '1'
+        && sl_data()->map[y][x + 1] != 'E')
+        return (true);
+    return (false);
 }
 void    new_move(int key)
 {

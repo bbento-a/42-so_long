@@ -6,7 +6,7 @@
 #    By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 15:37:59 by bbento-a          #+#    #+#              #
-#    Updated: 2024/07/12 15:03:41 by bbento-a         ###   ########.fr        #
+#    Updated: 2024/07/22 18:54:30 by bbento-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJ_DIR		= obj/
 
 # Compiler and Flags
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror #-g
 LMLXFLAGS	= -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 LMLXLINUX	= -I/usr/include -Imlx_linux
 RM			= rm -f

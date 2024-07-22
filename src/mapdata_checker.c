@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:54:19 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/10 19:24:19 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/22 12:17:31 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,11 @@ void	map_count_exit(char **map)
 		while (map[i][j])
 		{
 			if (map[i][j] == 'E')
+			{
 				count++;
+				sl_data()->exit.x = j;
+				sl_data()->exit.y = i;				
+			}
 			j++;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 16:00:02 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/19 12:31:37 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/22 12:13:36 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ void    print_error_msg(char *str)
 int exit_game(void)
 {
     ft_putstr_fd("Game exited.\n", STDERR_FILENO);
+    image_destroy();
+    mlx_destroy_window(sl_data()->mlx.mlx, sl_data()->mlx.window);
+    free_matrix(sl_data()->map);
+    exit(EXIT_SUCCESS);
+}
+int finish_game(void)
+{
+    ft_putstr_fd("Game finished.\n", STDERR_FILENO);
     image_destroy();
     mlx_destroy_window(sl_data()->mlx.mlx, sl_data()->mlx.window);
     free_matrix(sl_data()->map);

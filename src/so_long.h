@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:12:09 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/22 10:48:42 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/22 12:13:47 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,12 @@ typedef struct s_steps
     int n;
 }   t_steps;
 
+typedef struct s_exit
+{
+    int x;
+    int y;
+}   t_exit;
+
 // Main struct
 
 typedef struct s_data
@@ -104,6 +110,7 @@ typedef struct s_data
     
     t_mapsize   mapsize;
     t_steps     steps;
+    t_exit      exit;
     t_sprites   spr;
     t_mlx_data  mlx;
     t_player    mc;
@@ -158,6 +165,7 @@ int     player_moves(int key);
 
 void    print_error_msg(char *str);
 int     exit_game(void);
+int     finish_game(void);
 void    free_matrix(char **mtx);
 
 // ft_functions.c

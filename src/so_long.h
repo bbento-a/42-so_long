@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:12:09 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/19 20:38:51 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/22 10:48:42 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,11 @@ typedef struct s_sprites
     t_im   collectable;
 }   t_sprites;
 
+typedef struct s_steps
+{
+    int n;
+}   t_steps;
+
 // Main struct
 
 typedef struct s_data
@@ -98,6 +103,7 @@ typedef struct s_data
     int         got_c;
     
     t_mapsize   mapsize;
+    t_steps     steps;
     t_sprites   spr;
     t_mlx_data  mlx;
     t_player    mc;

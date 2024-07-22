@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 17:10:18 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/16 16:49:07 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/22 10:49:27 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	main(int ac, char **av)
 		print_error_msg("Wrong parameters.\nTry ./so_long <map_file.ber>");
 	sl_data()->map = map_check(av[1]);
 	mapdata_validate(sl_data()->map);
-	// ft_printmap();
 	mlx_window_start();
 }
 

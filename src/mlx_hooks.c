@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 15:48:29 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/19 20:38:45 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/22 10:53:31 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ void    new_move(int key)
         sl_data()->mc.pos_x++;
         image_update(sl_data()->mc.pos_x, sl_data()->mc.pos_y, D);
     }
+    sl_data()->steps.n += 1;
+    ft_printf("Steps: %d\n", sl_data()->steps.n);
 }
 
 int player_moves(int key)

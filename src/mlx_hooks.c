@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 15:48:29 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/22 12:13:39 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/22 16:21:27 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,11 @@ void    new_move(int key)
     move_incollec();
     sl_data()->steps.n += 1;
     ft_printf("Steps: %d\n", sl_data()->steps.n);
+    ITW(sl_data()->mlx.mlx, sl_data()->mlx.window, sl_data()->spr.wall.img,
+        0 * SS, 0 * SS);
+    ITW(sl_data()->mlx.mlx, sl_data()->mlx.window, sl_data()->spr.wall.img,
+        1 * SS, 0 * SS);
+    steps_display(sl_data()->steps.n);
 }
 
 int player_moves(int key)

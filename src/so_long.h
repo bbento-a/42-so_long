@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:12:09 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/22 12:13:47 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/22 16:07:15 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,7 @@ int     flood_fill_c(char **map, int ply_x, int ply_y);
 void    mapdata_validate(char **map);
 
 // mlx_window.c
+void    steps_display(int steps);
 void    window_load();
 void    mlx_window_start();
 

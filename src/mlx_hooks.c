@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 15:48:29 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/22 16:21:27 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/23 18:05:08 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,7 @@ int player_moves(int key)
         new_move(S);
     else if (key == D && game_collisions(D))
         new_move(D);
+    else if (key == ESC)
+        exit_game();
     return (0);
 }

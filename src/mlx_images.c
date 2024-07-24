@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:32:31 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/19 12:39:18 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/24 20:20:01 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,25 @@ void	image_update(int x, int y, int key)
 			sl_data()->spr.mc_right.img, x * SS, y * SS);
 }
 
+t_im	*image_loader(char *path)
+{
+	void	*img;
+	int		ss;
+
+	img = mlx_xpm_file_to_image(sl_data()->mlx.mlx, path, &ss, &ss);
+	return (img);
+}
+
 void	image_load(void)
 {
-	int	ss;
-
-	sl_data()->spr.mc_front.img = XPMTI(sl_data()->mlx.mlx, MC_FRONT, &ss, &ss);
-	sl_data()->spr.mc_left.img = XPMTI(sl_data()->mlx.mlx, MC_LEFT, &ss, &ss);
-	sl_data()->spr.mc_back.img = XPMTI(sl_data()->mlx.mlx, MC_BACK, &ss, &ss);
-	sl_data()->spr.mc_right.img = XPMTI(sl_data()->mlx.mlx, MC_RIGHT, &ss, &ss);
-	sl_data()->spr.wall.img = XPMTI(sl_data()->mlx.mlx, WALL, &ss, &ss);
-	sl_data()->spr.exit.img = XPMTI(sl_data()->mlx.mlx, EXIT, &ss, &ss);
-	sl_data()->spr.floor.img = XPMTI(sl_data()->mlx.mlx, FLOOR, &ss, &ss);
-	sl_data()->spr.collectable.img = XPMTI(sl_data()->mlx.mlx, COLLECTABLE, &ss,
-		&ss);
+	sl_data()->spr.mc_front.img = image_loader(MC_FRONT);
+	sl_data()->spr.mc_left.img = image_loader(MC_LEFT);
+	sl_data()->spr.mc_back.img = image_loader(MC_BACK);
+	sl_data()->spr.mc_right.img = image_loader(MC_RIGHT);
+	sl_data()->spr.wall.img = image_loader(WALL);
+	sl_data()->spr.exit.img = image_loader(EXIT);
+	sl_data()->spr.floor.img = image_loader(FLOOR);
+	sl_data()->spr.collectable.img = image_loader(COLLECTABLE);
 }
 
 void	sprite_load(int x, int y)

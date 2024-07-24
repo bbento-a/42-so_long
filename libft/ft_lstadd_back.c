@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:20:56 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/08 12:05:32 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/07/24 20:39:59 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	t_list	*last;
 
 	if (!lst || !new)
-		return;
+		return ;
 	if (*lst)
 	{
 		last = ft_lstlast(*lst);

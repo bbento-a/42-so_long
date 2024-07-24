@@ -85,7 +85,7 @@ void	map_count_exit(char **map)
 			{
 				count++;
 				sl_data()->exit.x = j;
-				sl_data()->exit.y = i;				
+				sl_data()->exit.y = i;
 			}
 			j++;
 		}

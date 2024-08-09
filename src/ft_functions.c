@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:00:45 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/24 18:45:22 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/08/09 19:54:03 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,20 @@
 
 bool	ft_rev_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
+	size_t	j;
 
-	i = 0;
-	if (n == 0)
+	i = ft_strlen(s1);
+	j = ft_strlen(s2);
+	if (j != n)
 		return (false);
-	while (s1[i])
-	{
-		i++;
-	}
+	if (i < n)
+		return (false);
 	while (n > 0)
 	{
-		if (s2[n] != s1[i])
+		if (s1[i - n] != s2[j - n])
 			return (false);
 		n--;
-		i--;
 	}
 	return (true);
 }

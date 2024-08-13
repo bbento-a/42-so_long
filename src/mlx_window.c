@@ -6,11 +6,13 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 14:53:21 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/24 20:42:10 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/08/13 20:25:19 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+// Prints the steps of the player on the program
 
 void	steps_display(int steps)
 {

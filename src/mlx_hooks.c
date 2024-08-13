@@ -6,11 +6,13 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 15:48:29 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/23 18:05:08 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/08/13 21:06:25 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+// Checks whether or not the player can go through
 
 bool	game_collisions(int key)
 {
@@ -33,6 +35,9 @@ bool	game_collisions(int key)
 		return (false);
 	return (true);
 }
+// If the character takes a collectable, this will check if it is, and it
+// will remove from the map so if the character walks in the same tile,
+// it won't count again
 
 void	move_incollec(void)
 {
@@ -47,6 +52,8 @@ void	move_incollec(void)
 		sl_data()->map[y][x] = '0';
 	}
 }
+// This function will update all information about the map and the character
+// each time the player presses a movement key (WASD)
 
 void	new_move(int key)
 {
@@ -72,6 +79,8 @@ void	new_move(int key)
 		1 * SS, 0 * SS);
 	steps_display(sl_data()->steps.n);
 }
+// Calls collision verification, and only if it's false, it will call the
+// movement function according to the key that was pressed by the player
 
 int	player_moves(int key)
 {

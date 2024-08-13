@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 14:16:15 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/08/12 16:04:12 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/08/13 20:47:06 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,9 @@ int	flood_fill_c(char **map, int ply_x, int ply_y)
 		flood_fill_c(map, ply_x - 1, ply_y);
 	return (count);
 }
+// Here is where the program checks if the map given is valid/playable,
+// this means, for example, can the player reach the exit, or all collectables,
+// or if the map is close and the player cannot go out of bounds
 
 void	mapdata_validate(char **map)
 {

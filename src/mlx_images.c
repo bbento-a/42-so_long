@@ -6,11 +6,13 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:32:31 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/24 20:20:01 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/08/13 20:34:29 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+// Destroys all sprite images
 
 void	image_destroy(void)
 {
@@ -23,6 +25,8 @@ void	image_destroy(void)
 	mlx_destroy_image(sl_data()->mlx.mlx, sl_data()->spr.floor.img);
 	mlx_destroy_image(sl_data()->mlx.mlx, sl_data()->spr.collectable.img);
 }
+// Each time the player moves in different directions, the sprites will
+// update according to the direction the player is headed to
 
 void	image_update(int x, int y, int key)
 {
@@ -42,6 +46,8 @@ void	image_update(int x, int y, int key)
 		ITW(sl_data()->mlx.mlx, sl_data()->mlx.window,
 			sl_data()->spr.mc_right.img, x * SS, y * SS);
 }
+// When called, the function will turn the xpm file to an image that
+// can be printed on screen
 
 t_im	*image_loader(char *path)
 {
@@ -51,6 +57,7 @@ t_im	*image_loader(char *path)
 	img = mlx_xpm_file_to_image(sl_data()->mlx.mlx, path, &ss, &ss);
 	return (img);
 }
+// Loads all sprite images to each corresponding variable
 
 void	image_load(void)
 {
@@ -63,6 +70,8 @@ void	image_load(void)
 	sl_data()->spr.floor.img = image_loader(FLOOR);
 	sl_data()->spr.collectable.img = image_loader(COLLECTABLE);
 }
+// Here is where the map is read and images are printed in our game window,
+// using the mlx function mlx_put_image_to_window()
 
 void	sprite_load(int x, int y)
 {

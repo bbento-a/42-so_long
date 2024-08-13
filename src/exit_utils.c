@@ -6,11 +6,17 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 16:00:02 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/22 14:42:51 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/08/13 20:42:02 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+// Here we have all functions that inform the user of what happened during or
+// after the execution of the code, this may include errors while reading map
+// files, was the window closed, or if the player finsihed the game (steps are
+// printed in the console in function new_move(), in mlx_hooks.c)
+// Memory from the map is also freed here.
 
 void	print_error_msg(char *str)
 {

@@ -6,11 +6,13 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:00:45 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/08/09 19:54:03 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/08/13 20:43:54 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+// For file format verification (.ber)
 
 bool	ft_rev_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -31,6 +33,7 @@ bool	ft_rev_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (true);
 }
+// Matrix duplicate
 
 char	**ft_mtxdup(char **mtx)
 {
@@ -47,6 +50,7 @@ char	**ft_mtxdup(char **mtx)
 		res[i] = ft_strdup(mtx[i]);
 	return (res);
 }
+// Prints map (mainly used for debugging)
 
 void	ft_printmap(void)
 {

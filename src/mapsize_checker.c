@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 14:16:15 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/07/16 14:49:12 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/08/12 16:04:12 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,17 +67,17 @@ int	flood_fill_e(char **map, int ply_x, int ply_y)
 {
 	static int	count;
 
-	if (map[ply_x][ply_y] == 'E')
+	if (map[ply_y][ply_x] == 'E')
 		count++;
-	map[ply_x][ply_y] = 'F';
-	if (map[ply_x + 1][ply_y] != '1' && map[ply_x + 1][ply_y] != 'F')
-		flood_fill_e(map, ply_x + 1, ply_y);
-	if (map[ply_x - 1][ply_y] != '1' && map[ply_x - 1][ply_y] != 'F')
-		flood_fill_e(map, ply_x - 1, ply_y);
-	if (map[ply_x][ply_y + 1] != '1' && map[ply_x][ply_y + 1] != 'F')
+	map[ply_y][ply_x] = 'F';
+	if (map[ply_y + 1][ply_x] != '1' && map[ply_y + 1][ply_x] != 'F')
 		flood_fill_e(map, ply_x, ply_y + 1);
-	if (map[ply_x][ply_y - 1] != '1' && map[ply_x][ply_y - 1] != 'F')
+	if (map[ply_y - 1][ply_x] != '1' && map[ply_y - 1][ply_x] != 'F')
 		flood_fill_e(map, ply_x, ply_y - 1);
+	if (map[ply_y][ply_x + 1] != '1' && map[ply_y][ply_x + 1] != 'F')
+		flood_fill_e(map, ply_x + 1, ply_y);
+	if (map[ply_y][ply_x - 1] != '1' && map[ply_y][ply_x - 1] != 'F')
+		flood_fill_e(map, ply_x - 1, ply_y);
 	return (count);
 }
 
@@ -87,21 +87,21 @@ int	flood_fill_c(char **map, int ply_x, int ply_y)
 {
 	static int	count;
 
-	if (map[ply_x][ply_y] == 'C')
+	if (map[ply_y][ply_x] == 'C')
 		count++;
-	map[ply_x][ply_y] = 'F';
-	if (map[ply_x + 1][ply_y] != '1' && map[ply_x + 1][ply_y] != 'F'
-			&& map[ply_x + 1][ply_y] != 'E')
-		flood_fill_c(map, ply_x + 1, ply_y);
-	if (map[ply_x - 1][ply_y] != '1' && map[ply_x - 1][ply_y] != 'F'
-			&& map[ply_x - 1][ply_y] != 'E')
-		flood_fill_c(map, ply_x - 1, ply_y);
-	if (map[ply_x][ply_y + 1] != '1' && map[ply_x][ply_y + 1] != 'F'
-			&& map[ply_x][ply_y + 1] != 'E')
+	map[ply_y][ply_x] = 'F';
+	if (map[ply_y + 1][ply_x] != '1' && map[ply_y + 1][ply_x] != 'F'
+			&& map[ply_y + 1][ply_x] != 'E')
 		flood_fill_c(map, ply_x, ply_y + 1);
-	if (map[ply_x][ply_y - 1] != '1' && map[ply_x][ply_y - 1] != 'F'
-			&& map[ply_x][ply_y - 1] != 'E')
+	if (map[ply_y - 1][ply_x] != '1' && map[ply_y - 1][ply_x] != 'F'
+			&& map[ply_y - 1][ply_x] != 'E')
 		flood_fill_c(map, ply_x, ply_y - 1);
+	if (map[ply_y][ply_x + 1] != '1' && map[ply_y][ply_x + 1] != 'F'
+			&& map[ply_y][ply_x + 1] != 'E')
+		flood_fill_c(map, ply_x + 1, ply_y);
+	if (map[ply_y][ply_x - 1] != '1' && map[ply_y][ply_x - 1] != 'F'
+			&& map[ply_y][ply_x - 1] != 'E')
+		flood_fill_c(map, ply_x - 1, ply_y);
 	return (count);
 }
 

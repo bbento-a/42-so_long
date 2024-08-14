@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 16:28:14 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/08/09 18:26:35 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/08/14 14:55:38 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int	map_namecheck(char *map_file)
 	fd = open(map_file, O_RDONLY);
 	if (fd < 0)
 	{
-		print_error_msg("Failed to open map file");
 		close(fd);
+		print_error_msg("Failed to open map file");
 	}
 	return (fd);
 }
@@ -72,8 +72,8 @@ t_list	*map_read(char *map_file)
 	map_lst = 0;
 	if (!line)
 	{
-		print_error_msg("Map file is empty");
 		close(fd);
+		print_error_msg("Map file is empty");
 	}
 	while (line)
 	{
